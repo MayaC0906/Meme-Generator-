@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/styles/styles.css">
+    <title>Memes Generator</title>
+</head>
+
+<body onload="onInIt()" class="main-layout grid">
+
+    <header class="main-header flex space-between align-center">
+        <div class="logo">Memes Generator</div>
+        <nav class="main-nav-container">
+            <ul class="main-nav flex clean-list">
+                <button onclick="" > Gallery</button>
+                <button onclick="onRenderMemes()" > memes</button>
+                <button onclick="" > About</button>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="meme grid">
+
+        <section class="canvas-container">
+            <canvas width="450" height="450"> </canvas>
+        </section>
+
+        <section class="change-canvas">
+            <input onclick="checkIfIsEdited(),renderMeme()" class="txt-input" oninput="onSetLineText(this.value)"
+                class="meme-txt" type="text" value="enter your text">
+            <button onclick="onSaveMemeText()" class="save-text-button">Save text</button>
+            <label class="color-input-label flex" for="color-input"> Text color
+                <input class="color-input" onchange="onSetColor(this.value)" type="color" name="color" id=""
+                    value="#000000">
+            </label>
+            <a href="#" class="doenload-btn flex" onclick="onDownloadImg(this)" download="my-img.jpg">Download meme</a>
+            <button onclick="onDeleteMeme()" class="delete-meme fa trash"></button>
+            <button onclick="onChangeFontSize('increase')" class="increase-font"> A+ </button>
+            <button onclick="onChangeFontSize('decrease')" class="decrease-font"> A- </button>
+            <button onclick="onSwitchLines()" class="switch-line">↑↓</button>
+            <button class="add-line" onclick="onAddLine()">Add line</button>
+            <button class="save-to-gallery" onclick="onSaveToMemes()"> Save meme</button>
+
+        </section>
+    </section>
+
+
+
+    <section class="gallery-container">
+        <section class="gallery">
+        </section>
+    </section>
+
+    <section class="saved-memes hide" >
+    </section>
+
+    <script src="js/services/util.service.js"></script>
+    <script src="js/services/meme.service.js"></script>
+    <script src="js/services/gallery.service.js"></script>
+    <script src="js/controllers/meme.controller.js"></script>
+    <script src="js/controllers/gallery.controller.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,33 @@
+.main-header {
+    width: 100%;
+    height: 120px;
+    background-color: var(--clrPrimary-1);
+    opacity: .8;
+}
+
+.main-header >* {
+    margin: 0 50px;
+
+}
+
+.main-header .logo {
+    font-family: tilt-prism, monospace;
+    text-transform: uppercase;
+    color: var(--clrPrimary2);
+    font-size: 2em;
+    letter-spacing: 0.2em;
+}
+
+.main-header .main-nav {
+    gap: 20px;
+}
+
+.main-header .main-nav button {
+    font-size: 1.2em;
+    color: inherit;
+    text-decoration: none;
+    text-transform: uppercase;
+    background: none;
+    border: none;
+    cursor: pointer;
+}

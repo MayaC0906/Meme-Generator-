@@ -1,0 +1,17 @@
+:root {
+
+    /* FONT */
+    font-family: rubik, sans-serif;
+
+    /* pallete */
+    --clrPrimary1: #33156b;
+    --clrPrimaryBase: #7578da;
+    --clrPrimary-1: #b3b0ff;
+    --clrPrimary-2: #f0f0f0;
+
+    /* layout */
+    --l: 1060px;
+    --m: 860px;
+    --s: 600px;
+
+}

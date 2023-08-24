@@ -1,0 +1,34 @@
+/* ENGLISH FONTS */
+
+@font-face {
+    font-family: roboto-mono;
+    src: url("/css/fonts/roboto-mono/RobotoMono-Regular.ttf");
+}
+
+@font-face {
+    font-family: rubik;
+    src: url("/css/fonts/rubik/Rubik-Regular.ttf");
+}
+
+
+@font-face {
+    font-family: tilt-prism;
+    src: url("/css/fonts/tilt-prism/TiltPrism-Regular.ttf");
+}
+
+/* FONT AWESOME */
+
+@font-face {
+    font-family: fa;
+    src: url("/css/fonts/fa/fa-solid-900.ttf");
+}
+
+.fa::before {
+    font-family: fa;
+}
+
+.fa.trash::before {
+    content: "\f1f8"; 
+}
+
+/* give the elemnt both classes */

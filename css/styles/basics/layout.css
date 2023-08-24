@@ -1,0 +1,14 @@
+.main-layout {
+    grid-auto-flow: row;
+}
+
+.gallery {
+        columns: 4 220px;
+}
+
+
+.saved-memes {
+    columns: 4 220px;
+    margin-block-start: 10px;
+}
+

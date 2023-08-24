@@ -1,0 +1,109 @@
+.meme {
+    justify-content: space-evenly;
+    grid-template-columns: 1fr 1fr;
+    /* grid-auto-flow: column; */
+}
+
+.meme .canvas-container {
+    margin: 20px auto;
+    width: 40vw;
+}
+
+.meme .canvas-container canvas {
+    background-color: white;
+    border: 1px solid black;
+}
+
+.arrowUp {
+    height: 20px;
+    color: black;
+}
+
+.meme .change-canvas {
+    
+    
+    /* grid-template-columns: minmax(auto,100px)  minmax(auto,100px) minmax(auto,100px) minmax(auto,100px);
+    grid-template-rows: minmax(auto,100px)  minmax(auto,100px) minmax(auto,100px) minmax(auto,100px);
+    gap: 10px 10px;
+    grid-auto-flow: row;
+    grid-template-areas:
+        "txt-input txt-input txt-input txt-input"
+        "color-input-label color-input-label add-line add-line"
+        "delete-meme increase-font decrease-font switch-line"
+        "doenload-btn doenload-btn doenload-btn doenload-btn";
+        text-align: center;
+        justify-content: center;
+        align-content: center; */
+}
+
+/* .meme .change-canvas>*{
+   background-color: rgba(240, 255, 255, 0.714);  
+   font-size: 1.5rem;
+   text-align: center;
+   color: black;
+   border: 1px solid black;
+} 
+
+.meme .change-canvas .color-input-label {
+    grid-area: color-input-label;
+    align-items: center;
+    justify-content: space-evenly;
+    
+} */
+
+/* .meme .change-canvas .add-line {
+    grid-area: add-line;
+}
+
+.meme .change-canvas .delete-meme {
+    grid-area: delete-meme;
+}
+
+.meme .change-canvas .increase-font {
+    grid-area: increase-font;
+}
+
+.meme .change-canvas .decrease-font {
+    grid-area: decrease-font;
+}
+
+.meme .change-canvas .switch-line {
+    grid-area: switch-line;
+}
+
+.meme .change-canvas .doenload-btn {
+    grid-area: doenload-btn;
+text-decoration: none;
+align-items: center;
+justify-content: space-evenly;
+}
+
+.meme .change-canvas .txt-input {
+    grid-area: txt-input;
+} */
+
+
+
+/* .meme .change-canvas {
+gap: 20px;
+justify-content: space-evenly;
+}
+
+.meme .change-canvas :first-child {
+    padding: 10px;
+    font-size: 1rem;
+    background-color: rgba(240, 255, 255, 0.544);
+    text-align: center;
+}
+
+.meme .meme-txt {
+    width: 200px;
+} */
+
+/* .meme button {
+    width: 200px;
+    padding: 10px;
+    font-size: 1rem;
+    background-color: rgba(240, 255, 255, 0.544);
+    text-align: center;
+} */
