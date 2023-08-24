@@ -34,3 +34,10 @@
     border: none;
     cursor: pointer;
 }
+
+.main-header .main-nav button:hover {
+    font-size: 1.3rem;
+    scale: 1.1;
+    transition: .2s;
+}
+

@@ -1,8 +1,8 @@
-.gallery>* {
+.saved-memes>* {
     border-radius: 10px;
 }
 
-.gallery>*:hover {
+.saved-memes>*:hover {
     scale: 1.1;
     cursor: pointer;
 }
