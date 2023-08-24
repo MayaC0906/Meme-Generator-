@@ -53,8 +53,15 @@ function onUp() {
     SaveGmemeToStorage()
 }
 
+function onOpenGallery() {
+    showGallery()
+    hideMeme()
+    hideSavedMemes()
+}
+
 function renderMeme() {
     let meme = getMeme()
+    if (meme.selectedImgId === null) return
     let memeImg = getImgUrlById(meme.selectedImgId)
     renderMemeImg(memeImg)
 }
@@ -67,7 +74,6 @@ function renderMemeImg(img) {
         gElCanvas.height = (bgcImg.naturalHeight / bgcImg.naturalWidth) * gElCanvas.width
         gCtx.drawImage(bgcImg, 0, 0, gElCanvas.width, gElCanvas.height)
 
-        // let memeTxtProp = getMemeTextProp()
         let meme = getMeme()
         meme.lines.map(line => renderMemeTxt(line))
     }
@@ -89,8 +95,13 @@ function onDownloadImg(elLink) {
     elLink.href = imgContent
 }
 
-function onSetColor(color) {
+function onSetFontColor(color) {
     setMemeTxtColor(color)
+    renderMeme()
+}
+
+function onSetStrokeColor(strokeColor) {
+    setStrokeColor(strokeColor)
     renderMeme()
 }
 
@@ -104,16 +115,31 @@ function onSwitchLines() {
     renderMeme()
 }
 
+function onMoveText(direction) {
+    moveText(direction)
+    renderMeme()
+}
+
+function onChangeAlign(direction) {
+    changeAlign(direction)
+    renderMeme()
+}
+
+function onSetFont(font) {
+    setFont(font)
+    renderMeme()
+}
+
 function onSaveToMemes() {
     const imgContent = gElCanvas.toDataURL('image/jpeg')
     saveToMemes(imgContent)
 
-    onRenderMemes()
+    onRenderSavedMemes()
 }
 
-function onDeleteMeme() {
-    gCtx.fillStyle = 'white'
-    gCtx.fillRect(0, 0, gElCanvas.width, gElCanvas.height);
+function onDeleteLine() {
+    deleteSelectedLine()
+    renderMeme()
 }
 
 function onAddLine() {
@@ -121,38 +147,48 @@ function onAddLine() {
     renderMeme()
 }
 
+function onAddEmoji(emoji){
+addLine()
+setEmoji(emoji)
+renderMeme()
+}
+
 function onSaveMemeText() {
     cancelIsEdited()
     renderMeme()
 }
 
-function onRenderMemes() {
-    let elMeme = document.querySelector('.meme')
-    let elGallery = document.querySelector('.gallery-container')
-    let elMemes = document.querySelector('.saved-memes')
+function onRenderSavedMemes() {
+    hideMeme()
+    hideGallery()
 
-    elMeme.classList.add('hide')
-    elGallery.classList.add('hide')
-    elMemes.classList.remove('hide')
-
+    let elSavedMemes = document.querySelector('.saved-memes')
     let memesStrs = loadFromStorage('savedImagesDB')
+    elSavedMemes.innerHTML = memesStrs.join('')
 
-    elMemes.innerHTML = memesStrs.join('')
+    showSavedMemes()
 
 }
 
-///////////////////////////
-// function onEditImg(meme)
-/////////////////////////////
+function onEditImg(meme) {
+    console.log(meme);
+    showMeme()
+    hideSavedMemes()
+
+    // gMeme = meme
+    // SaveGmemeToStorage()
+    renderMeme()
+}
 
 function renderMemeTxt(textProp) {
 
     gCtx.lineWidth = 2
-    gCtx.strokeStyle = "#000000"
+    gCtx.strokeStyle = `${textProp.strokeColor}`
 
     gCtx.fillStyle = `${textProp.color}`
-    gCtx.font = `${textProp.size}px rubik`
+    gCtx.font = `${textProp.size}px ${textProp.font}`
     gCtx.textBaseline = 'middle'
+    gCtx.textAlign = `${textProp.align}`
     gCtx.fillText(`${textProp.txt}`, textProp.x, textProp.y)
     gCtx.strokeText(`${textProp.txt}`, textProp.x, textProp.y)
     let textLength = gCtx.measureText(textProp.txt)

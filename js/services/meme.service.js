@@ -1,6 +1,6 @@
 'use strict'
 
-var gSavedImgs 
+var gSavedImgs = []
 
 var gImgs = [
   { id: 1, url: './images/1.jpg', keywords: ['funny', 'politics'] },
@@ -51,14 +51,21 @@ function setImg(imgId) {
 }
 
 function setMemeTxtColor(color) {
-  gMeme.lines[gMeme.selectedLineIdx].color = color
+  let selectedLine = getSelectedLine()
+  selectedLine.color = color
   SaveGmemeToStorage ()
+}
+
+function setStrokeColor (strokeColor) {
+  let selectedLine = getSelectedLine()
+  selectedLine.strokeColor = strokeColor
+  SaveGmemeToStorage ()  
 }
 
 function addLine() {
   let newLine = _createLine(220)
-
   gMeme.lines.push(newLine)
+  gMeme.selectedLineIdx = gMeme.lines.length-1
   SaveGmemeToStorage ()
 }
 
@@ -68,10 +75,47 @@ function switchLines() {
   SaveGmemeToStorage ()
 }
 
+function moveText (direction) {
+let selectedLine = getSelectedLine()
+if (!selectedLine) return 
+if (direction==='up') selectedLine.y-=3
+else if (direction==='down') selectedLine.y+=3
+
+SaveGmemeToStorage()
+}
+
+function changeAlign(direction) {
+let selectelLine = getSelectedLine()
+  if (direction==='left') selectelLine.align = 'left'
+  else if (direction==='center') selectelLine.align = 'center'
+  else if (direction==='right') selectelLine.align = 'right'
+
+  SaveGmemeToStorage()
+}
+
 function setFontSize (fontChange) {
   if (fontChange === 'increase') gMeme.lines[gMeme.selectedLineIdx].size+=1
   else gMeme.lines[gMeme.selectedLineIdx].size-=1
   SaveGmemeToStorage ()
+}
+
+function setFont(font) {
+  let selectedLine = getSelectedLine()
+  selectedLine.font = font
+  SaveGmemeToStorage() 
+}
+
+function deleteSelectedLine() {
+  let newLines = gMeme.lines.filter(line => line.isEdited===false)
+  gMeme.lines = newLines
+  SaveGmemeToStorage()
+}
+
+function setEmoji(emoji) {
+  let line = gMeme.lines[gMeme.lines.length-1]
+  line.txt = emoji
+  line.x = 200
+  SaveGmemeToStorage()
 }
 
 function getMemeTextProp(line) {
@@ -81,6 +125,10 @@ function getMemeTextProp(line) {
 
 function getMemeLine() {
   return gMeme.selectedLineIdx
+}
+
+function getSelectedLine() {
+  return gMeme.lines.find(line=> line.isEdited===true)
 }
 
 function getImgUrlById(id) {
@@ -96,6 +144,7 @@ _createLine(380)
 SaveGmemeToStorage ()
   document.querySelector('.txt-input').value = 'enter text here'
   document.querySelector('.color-input').value = '#FFFFFF'
+  document.querySelector('.stroke-color-input').value = '#000000'
 }
 
 function checkIfIsEdited() {
@@ -112,7 +161,9 @@ function cancelIsEdited() {
 }
 
 function saveToMemes (imgSrc) {
-  let ImgStr = `<img onclick="onEditImg(${gMeme})" src="${imgSrc}" alt=""></img>`
+  let meme = gMeme
+  let memeStr = JSON.stringify(meme)
+  let ImgStr = `<img onclick="onEditImg('hi')" src="${imgSrc}" alt=""></img>`
 
   let savedImgs = loadFromStorage ('savedImagesDB')
   if (!savedImgs) gSavedImgs =[]
@@ -131,6 +182,7 @@ function checkIfIsDrug(x,y) {
       line.isDrag=true
       line.isEdited=true
       gMeme.selectedLineIdx = idx
+      document.querySelector('.txt-input').value = line.txt
     }else{
       line.isDrag =false
       line.isEdited=false
@@ -147,9 +199,12 @@ function _createLine(y) {
     isDrag: false,
     x:40,
     y,
+    align: 'left',
     txt: 'enter text here',
+    font: 'impact',
     size: 40,
-    color: '#FFFFFF'
+    color: '#FFFFFF',
+    strokeColor: '#000000'
   }
   }
 

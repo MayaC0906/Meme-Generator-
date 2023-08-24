@@ -31,4 +31,16 @@
     content: "\f1f8"; 
 }
 
+.fa.align-left::before {
+    content: "\f036"; 
+}
+
+.fa.align-middle::before {
+    content: "\f037"; 
+}
+
+.fa.align-right::before {
+    content: "\f038"; 
+}
+
 /* give the elemnt both classes */

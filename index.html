@@ -14,34 +14,61 @@
         <div class="logo">Memes Generator</div>
         <nav class="main-nav-container">
             <ul class="main-nav flex clean-list">
-                <button onclick="" > Gallery</button>
-                <button onclick="onRenderMemes()" > memes</button>
-                <button onclick="" > About</button>
+                <button onclick="onOpenGallery()"> Gallery</button>
+                <button onclick="onRenderSavedMemes()"> memes</button>
+                <button onclick="onOpenModal()"> About</button>
             </ul>
         </nav>
     </header>
 
-    <section class="meme grid">
+
+
+    <section class="meme grid hide">
 
         <section class="canvas-container">
             <canvas width="450" height="450"> </canvas>
         </section>
 
-        <section class="change-canvas">
+        <section class="change-canvas grid">
             <input onclick="checkIfIsEdited(),renderMeme()" class="txt-input" oninput="onSetLineText(this.value)"
                 class="meme-txt" type="text" value="enter your text">
             <button onclick="onSaveMemeText()" class="save-text-button">Save text</button>
-            <label class="color-input-label flex" for="color-input"> Text color
-                <input class="color-input" onchange="onSetColor(this.value)" type="color" name="color" id=""
-                    value="#000000">
-            </label>
-            <a href="#" class="doenload-btn flex" onclick="onDownloadImg(this)" download="my-img.jpg">Download meme</a>
-            <button onclick="onDeleteMeme()" class="delete-meme fa trash"></button>
+            <button class="move-line-up" title="Move line up" onclick="onMoveText('up')">↑</button>
+            <button class="move-line-down" title="Move line down" onclick="onMoveText('down')">↓</button>
+            <button class="switch-line" title="Switch lines" onclick="onSwitchLines()" >↑↓</button>
+            <button class="add-line" title="Add line" onclick="onAddLine()">+</button>
+            <button onclick="onDeleteLine()" class="delete-meme fa trash"></button>
             <button onclick="onChangeFontSize('increase')" class="increase-font"> A+ </button>
             <button onclick="onChangeFontSize('decrease')" class="decrease-font"> A- </button>
-            <button onclick="onSwitchLines()" class="switch-line">↑↓</button>
-            <button class="add-line" onclick="onAddLine()">Add line</button>
+            <button onclick="onChangeAlign('left')" class="fa align-left"></button>
+            <button onclick="onChangeAlign('center')" class="fa align-middle"></button>
+            <button onclick="onChangeAlign('right')" class="fa align-right"></button>
+            <select onchange="onSetFont(this.value)" name="font-select" class="set-font">
+                <option value="impact"> Impact </option>
+                <option value="rubik"> Rubik </option>
+                <option value="monospace"> Monospace </option>
+            </select>
+            <label class="stroke-color-input-label flex" for="color-input"> Stroke color
+                <input class="stroke-color-input" onchange="onSetStrokeColor(this.value)" type="color" name="color"
+                    id="" value="#000000">
+            </label>
+            <label class="color-input-label flex" for="color-input"> Font color
+                <input class="color-input" onchange="onSetFontColor(this.value)" type="color" name="color" id=""
+                    value="#FFFFFF">
+            </label>
+
+            <section class="emoji-pick flex">
+                <button onclick="onAddEmoji('❤️')">❤️</button>
+                <button onclick="onAddEmoji('😊')">😊</button>
+                <button onclick="onAddEmoji('👑')">👑</button>
+                <button onclick="onAddEmoji('✌️')">✌️</button>
+                <button onclick="onAddEmoji('👿')">👿</button>
+            </section>
+            <a href="#" class="download-btn flex" onclick="onDownloadImg(this)" download="my-img.jpg">Download meme</a>
             <button class="save-to-gallery" onclick="onSaveToMemes()"> Save meme</button>
+            <button class="fc-btn" onclick="onShareImg()">
+                Share your meme on Facebook
+            </button>
 
         </section>
     </section>
@@ -53,8 +80,13 @@
         </section>
     </section>
 
-    <section class="saved-memes hide" >
+
+    <section class="saved-memes hide">
     </section>
+
+    <footer class="flex">
+        © All rights reserved to Maya
+    </footer>
 
     <script src="js/services/util.service.js"></script>
     <script src="js/services/meme.service.js"></script>

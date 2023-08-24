@@ -7,6 +7,8 @@ function renderGallery() {
 }
 
 function onImgSelect(imgId) {
+    hideGallery()
+    showMeme()
     setImg(imgId)
     resetScreen()
     renderMeme()    

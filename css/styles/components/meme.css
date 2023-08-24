@@ -1,11 +1,12 @@
 .meme {
     justify-content: space-evenly;
     grid-template-columns: 1fr 1fr;
-    /* grid-auto-flow: column; */
 }
 
+
+
 .meme .canvas-container {
-    margin: 20px auto;
+    margin: 30px auto;
     width: 40vw;
 }
 
@@ -20,90 +21,97 @@
 }
 
 .meme .change-canvas {
-    
-    
-    /* grid-template-columns: minmax(auto,100px)  minmax(auto,100px) minmax(auto,100px) minmax(auto,100px);
-    grid-template-rows: minmax(auto,100px)  minmax(auto,100px) minmax(auto,100px) minmax(auto,100px);
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-auto-columns: 1fr;
     gap: 10px 10px;
     grid-auto-flow: row;
     grid-template-areas:
-        "txt-input txt-input txt-input txt-input"
-        "color-input-label color-input-label add-line add-line"
-        "delete-meme increase-font decrease-font switch-line"
-        "doenload-btn doenload-btn doenload-btn doenload-btn";
-        text-align: center;
-        justify-content: center;
-        align-content: center; */
+        "txt-input txt-input txt-input save-text-button save-text-button"
+        "move-line-up move-line-down switch-line add-line delete-meme"
+        "increase-font decrease-font align-left align-middle align-right"
+        "set-font set-font set-font stroke-color-input-label color-input-label"
+        "emoji-pick emoji-pick emoji-pick emoji-pick emoji-pick"
+        "download-btn download-btn save-to-gallery save-to-gallery save-to-gallery"
+        "fc-btn fc-btn fc-btn fc-btn fc-btn";
+        margin: 20px 40px;
+
+
 }
 
-/* .meme .change-canvas>*{
-   background-color: rgba(240, 255, 255, 0.714);  
-   font-size: 1.5rem;
-   text-align: center;
-   color: black;
-   border: 1px solid black;
-} 
-
-.meme .change-canvas .color-input-label {
-    grid-area: color-input-label;
-    align-items: center;
-    justify-content: space-evenly;
-    
-} */
-
-/* .meme .change-canvas .add-line {
-    grid-area: add-line;
+.txt-input {
+    grid-area: txt-input;
 }
 
-.meme .change-canvas .delete-meme {
-    grid-area: delete-meme;
+.save-text-button {
+    grid-area: save-text-button;
 }
 
-.meme .change-canvas .increase-font {
-    grid-area: increase-font;
+.move-line-up {
+    grid-area: move-line-up;
 }
 
-.meme .change-canvas .decrease-font {
-    grid-area: decrease-font;
+.move-line-down {
+    grid-area: move-line-down;
 }
 
-.meme .change-canvas .switch-line {
+.switch-line {
     grid-area: switch-line;
 }
 
-.meme .change-canvas .doenload-btn {
-    grid-area: doenload-btn;
-text-decoration: none;
-align-items: center;
-justify-content: space-evenly;
+.add-line {
+    grid-area: add-line;
 }
 
-.meme .change-canvas .txt-input {
-    grid-area: txt-input;
-} */
-
-
-
-/* .meme .change-canvas {
-gap: 20px;
-justify-content: space-evenly;
+.delete-meme {
+    grid-area: delete-meme;
 }
 
-.meme .change-canvas :first-child {
-    padding: 10px;
-    font-size: 1rem;
-    background-color: rgba(240, 255, 255, 0.544);
-    text-align: center;
+.increase-font {
+    grid-area: increase-font;
 }
 
-.meme .meme-txt {
-    width: 200px;
-} */
+.decrease-font {
+    grid-area: decrease-font;
+}
 
-/* .meme button {
-    width: 200px;
-    padding: 10px;
-    font-size: 1rem;
-    background-color: rgba(240, 255, 255, 0.544);
-    text-align: center;
-} */
+.align-middle {
+    grid-area: align-middle;
+}
+
+.align-left {
+    grid-area: align-left;
+}
+
+.align-right {
+    grid-area: align-right;
+}
+
+.set-font {
+    grid-area: set-font;
+}
+
+.stroke-color-input-label {
+    grid-area: stroke-color-input-label;
+}
+
+.color-input-label {
+    grid-area: color-input-label;
+}
+
+.emoji-pick {
+    justify-content: space-between;
+    grid-area: emoji-pick;
+}
+
+.download-btn {
+    grid-area: download-btn;
+}
+
+.fc-btn {
+    grid-area: fc-btn;
+}
+
+.save-to-gallery {
+    grid-area: save-to-gallery;
+}
