@@ -141,7 +141,7 @@
 .emoji-pick >*:hover {
     background-color: rgb(119, 232, 255);
     cursor: pointer;
-    scale: 1.1;
+    scale: 1.3;
 }
 
 

@@ -1,8 +1,9 @@
 .saved-memes>* {
     border-radius: 10px;
+    margin: 20px;
 }
 
 .saved-memes>*:hover {
-    scale: 1.1;
+    scale: 1.05;
     cursor: pointer;
 }
