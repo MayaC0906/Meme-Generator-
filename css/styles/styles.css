@@ -1,17 +1,16 @@
 /* SETUP */
-
-@import url("/css/styles/setup/vars.css");
-@import url("/css/styles/setup/typography.css");
+@import url("./setup/vars.css");
+@import url("./setup/typography.css");
 
 /* BASICS */
-@import url("/css/styles/basics/base.css");
-@import url("/css/styles/basics/layout.css");
-@import url("/css/styles/basics/helpers.css");
+@import url("./basics/base.css");
+@import url("./basics/layout.css");
+@import url("./basics/helpers.css");
 
 /* COMPONENTS */
-@import url("/css/styles/components/main-header.css");
-@import url("/css/styles/components/meme.css");
-@import url("/css/styles/components/gallery.css");
+@import url("./components/main-header.css");
+@import url("./components/meme.css");
+@import url("./css/styles/components/gallery.css");
 
 /* MEDIA WUERIES */
-@import url("/css/styles/setup/mq.css");
+@import url("./setup/mq.css");
