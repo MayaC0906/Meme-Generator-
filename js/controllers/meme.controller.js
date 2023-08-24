@@ -38,18 +38,19 @@ function onMove(ev) {
     let meme = getMeme()
     let lineIsDrag = meme.lines.find(line => line.isDrag === true)
     if (lineIsDrag === undefined) return
-    if (lineIsDrag) {
+    else {
         let lineWidth = gCtx.measureText(lineIsDrag.txt).width
-        lineIsDrag.x = ev.offsetX - lineWidth/2
+        lineIsDrag.x = ev.offsetX - lineWidth / 2
         lineIsDrag.y = ev.offsetY
+        SaveGmemeToStorage()
         renderMeme()
     }
-    console.log('hi');
 }
 
 function onUp() {
     let meme = getMeme()
     meme.lines.forEach(line => line.isDrag = false)
+    SaveGmemeToStorage()
 }
 
 function renderMeme() {
@@ -107,7 +108,7 @@ function onSaveToMemes() {
     const imgContent = gElCanvas.toDataURL('image/jpeg')
     saveToMemes(imgContent)
 
-    onRenderMemes ()
+    onRenderMemes()
 }
 
 function onDeleteMeme() {
@@ -125,18 +126,18 @@ function onSaveMemeText() {
     renderMeme()
 }
 
-function onRenderMemes () {
-let elMeme = document.querySelector ('.meme')
-let elGallery = document.querySelector ('.gallery-container')
-let elMemes = document.querySelector ('.saved-memes')
+function onRenderMemes() {
+    let elMeme = document.querySelector('.meme')
+    let elGallery = document.querySelector('.gallery-container')
+    let elMemes = document.querySelector('.saved-memes')
 
-elMeme.classList.add ('hide')
-elGallery.classList.add ('hide')
-elMemes.classList.remove ('hide')
+    elMeme.classList.add('hide')
+    elGallery.classList.add('hide')
+    elMemes.classList.remove('hide')
 
-let memesStrs = loadFromStorage ('savedImagesDB')
+    let memesStrs = loadFromStorage('savedImagesDB')
 
-elMemes.innerHTML = memesStrs.join('')
+    elMemes.innerHTML = memesStrs.join('')
 
 }
 

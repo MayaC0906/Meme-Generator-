@@ -2,25 +2,25 @@
 
 @font-face {
     font-family: roboto-mono;
-    src: url("/css/fonts/roboto-mono/RobotoMono-Regular.ttf");
+    src: url("../../fonts/roboto-mono/RobotoMono-Regular.ttf");
 }
 
 @font-face {
     font-family: rubik;
-    src: url("/css/fonts/rubik/Rubik-Regular.ttf");
+    src: url("../../fonts/rubik/Rubik-Regular.ttf");
 }
 
 
 @font-face {
     font-family: tilt-prism;
-    src: url("/css/fonts/tilt-prism/TiltPrism-Regular.ttf");
+    src: url("../../fonts/tilt-prism/TiltPrism-Regular.ttf");
 }
 
 /* FONT AWESOME */
 
 @font-face {
     font-family: fa;
-    src: url("/css/fonts/fa/fa-solid-900.ttf");
+    src: url("../../fonts/fa/fa-solid-900.ttf");
 }
 
 .fa::before {

@@ -10,7 +10,7 @@
 /* COMPONENTS */
 @import url("./components/main-header.css");
 @import url("./components/meme.css");
-@import url("./css/styles/components/gallery.css");
+@import url("./components/gallery.css");
 
 /* MEDIA WUERIES */
 @import url("./setup/mq.css");
