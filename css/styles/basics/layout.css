@@ -1,14 +1,16 @@
+
 .main-layout {
     grid-auto-flow: row;
-    gap: 10px;
 }
 
 .gallery {
-  columns: 4 220px;
+  columns: 4 200px;
 }
 
 
 .saved-memes {
     columns: 3 150px;
 }
+
+
 

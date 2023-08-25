@@ -4,10 +4,7 @@ footer {
     background-color: var(--clrPrimary-1);
     font-size: smaller;
     text-align: center;
-    position: fixed;
-    bottom: 0;
-    left: 0;
     justify-content: center;
-    align-items: center;
+    align-items: center;    
 }
 

@@ -1,0 +1,30 @@
+.modal-container {
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(128, 128, 128, 0.599);
+    transition: .6s;
+    place-items: center;
+    justify-content: center;
+    z-index: 100;
+}
+
+.about-modal {
+    display: block;
+    flex-direction: column;
+    text-align: center;
+    background-color: rgb(200, 252, 255);
+    border-color: black;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.about-modal button {
+    border-radius: 10px;
+    font-size: 1rem;
+    border: 1px solid #141b2a;
+    color: #141b2a;
+    background-color: white;
+    height: 45.2px;
+    cursor: pointer;
+}

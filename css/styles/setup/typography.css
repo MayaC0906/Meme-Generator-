@@ -34,6 +34,9 @@
 .fa.align-left::before {
     content: "\f036"; 
 }
+.fa.bars::before {
+    content: "\f0c9"; 
+}
 
 .fa.align-middle::before {
     content: "\f037"; 

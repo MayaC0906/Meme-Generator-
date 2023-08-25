@@ -1,5 +1,13 @@
+*{
+    box-sizing: border-box;
+    
+}
+
 body {
     background-image: url(../../../images/bcg-img.jpg);
+    width: 100vw;
+    height: 100vh;
+    margin: 0;
 }
 
 img {

@@ -9,5 +9,8 @@
     --clrPrimary-1: #b3b0ff;
     --clrPrimary-2: #f0f0f0;
 
-
+    /* SIZES */
+    --xkMeme: 600px;
+     --lMeme: 450px;
+    --sMeme: 400px
 }

@@ -1,13 +1,16 @@
 .meme {
-    justify-content: space-evenly;
-    grid-template-columns: 1fr 1fr;
+    justify-content: space-between;
+    grid-template-columns: 1fr 70px 1fr;
+    justify-self: center;
+    align-items: center;
 }
 
 
 
 .meme .canvas-container {
+    grid-column: 1;
     margin: 30px auto;
-    width: 40vw;
+    justify-content: center;
 }
 
 .meme .canvas-container canvas {
@@ -21,6 +24,10 @@
 }
 
 .meme .change-canvas {
+    grid-column: 3;
+align-self: inline-end;
+    height: var(--lMeme);
+    width: var(--lMeme);
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
     grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
     grid-auto-columns: 1fr;
@@ -34,7 +41,7 @@
         "emoji-pick emoji-pick emoji-pick emoji-pick emoji-pick"
         "download-btn download-btn save-to-gallery save-to-gallery save-to-gallery"
         "fc-btn fc-btn fc-btn fc-btn fc-btn";
-    margin: 20px 40px;
+    /* margin: 20px 0 20px 40px; */
 
 
 }
@@ -46,9 +53,10 @@
     text-align: center;
     font-family: roboto-mono;
     border: 1px solid black;
+    border-radius: 10px;
 }
 
-.meme .change-canvas>*:hover:not(.emoji-pick) {
+.meme .change-canvas>*:hover:not(.emoji-pick):not(.fc-btn) {
     background-color: rgb(119, 232, 255);
     cursor: pointer;
 }
@@ -111,13 +119,17 @@
 
 .stroke-color-input-label {
     grid-area: stroke-color-input-label;
+    font-size: 0.7rem;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
 }
 
 .color-input-label {
     grid-area: color-input-label;
+    font-size: 0.4rem;
+    flex-direction: column;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -128,7 +140,7 @@
     align-items: center;
 }
 
-.emoji-pick >* {
+.emoji-pick>* {
     margin: 0 5px;
     width: 100%;
     height: 80%;
@@ -138,7 +150,7 @@
 
 }
 
-.emoji-pick >*:hover {
+.emoji-pick>*:hover {
     background-color: rgb(119, 232, 255);
     cursor: pointer;
     scale: 1.3;
@@ -158,6 +170,35 @@
     grid-area: fc-btn;
 }
 
+.fc-btn:hover {
+    background-color: #4267B2;
+    cursor: pointer;
+    color: white;
+}
+
 .save-to-gallery {
     grid-area: save-to-gallery;
+}
+
+
+
+#style1 {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    width: 30px;
+    height: 30px;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+#style1::-webkit-color-swatch {
+    border-radius: 10px;
+    border: 1px solid black;
+}
+
+#style1::-moz-color-swatch {
+    border-radius: 15px;
+    border: 1px solid black;
 }

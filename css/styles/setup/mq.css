@@ -1,0 +1,66 @@
+@media screen and (max-width: 1010px) {
+    .meme .change-canvas {
+        width: var(--sMeme);
+        height: var(--sMeme);
+    }
+
+    .meme {
+        grid-template-columns: 1fr 40px 1fr;
+    }
+}
+
+@media screen and (max-width: 920px) {
+
+    .meme {
+        grid-template-columns: none;
+        grid-template-rows: 1fr 1fr;
+    }
+
+    .meme .canvas-container {
+        grid-column: auto;
+    }
+
+    .meme .change-canvas {
+        grid-column: auto;
+        margin-block-end: 20px;
+        align-self: center;
+        width: var(--xkMeme);
+    }
+
+}
+
+@media screen and (max-width: 750px) {
+
+    .meme .change-canvas {
+        width: var(--sMeme)
+    }
+
+    .main-header .logo {
+    margin:auto;
+    }
+
+    .main-header .main-nav {
+        transition: .6s;
+        position: absolute;
+        z-index: 10;
+        right: -40px;
+        top: -1000px;
+        background-color: rgb(209, 215, 255);
+        width: 100%;
+        right: 0;
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .bars {
+        display:block;
+        margin: auto;
+    }
+
+    .main-header .main-nav button {
+        height: 35px;
+        border-bottom: 1px solid black;
+    }
+
+
+}

@@ -8,24 +8,42 @@
     <title>Memes Generator</title>
 </head>
 
-<body onload="onInIt()" class="main-layout grid">
+<body onload="onInIt()" class="main-layout grid menue-open">
 
     <header class="main-header flex space-between align-center">
         <div class="logo">Memes Generator</div>
         <nav class="main-nav-container">
-            <ul class="main-nav flex clean-list">
-                <button onclick="onOpenGallery()"> Gallery</button>
-                <button onclick="onRenderSavedMemes()"> memes</button>
-                <button onclick="onOpenModal()"> About</button>
-            </ul>
+            <div class="main-nav flex">
+                <button  onclick="onOpenGallery()"> Gallery</button>
+                <button  onclick="onRenderSavedMemes()"> memes</button>
+                <button  onclick="onOpenModal()"> About</button>
+            </div>
         </nav>
+        <button onclick="onOpenBars()" class="fa bars hide"></button>
     </header>
 
+    <div class="modal-container hide">
+        <div class="about-modal">
+            <h1>Welcome to Meme-Generator! 🤣</h1>
+
+            <p>First you have to pick a picture from our helarious gallery</p>
+            <p>Than you can add text in the edit area</p>
+            <p>The line you edit is the one with the red board</p>
+            <p>You can choose a line by clicking on it or by the switching lines button😲</p>
+            <p>you can drag, change colors and use all the features to get the perfect line!</p>
+            <p>When you finish you can save, share or download to let your friends judge if you're as funny as you think
+            </p>
+            <h2>Congratulations - you learned how to make a MEME! 🥳🎨🖌️ </h2>
+
+            <button onclick="onCloseModal()">Close</button>
+
+        </div>
+    </div>
 
 
     <section class="meme grid hide">
 
-        <section class="canvas-container">
+        <section class="canvas-container flex">
             <canvas width="450" height="450"> </canvas>
         </section>
 
@@ -35,7 +53,7 @@
             <button onclick="onSaveMemeText()" class="save-text-button">Save text</button>
             <button class="move-line-up" title="Move line up" onclick="onMoveText('up')">↑</button>
             <button class="move-line-down" title="Move line down" onclick="onMoveText('down')">↓</button>
-            <button class="switch-line" title="Switch lines" onclick="onSwitchLines()" >↑↓</button>
+            <button class="switch-line" title="Switch lines" onclick="onSwitchLines()">↑↓</button>
             <button class="add-line" title="Add line" onclick="onAddLine()">+</button>
             <button onclick="onDeleteLine()" class="delete-meme fa trash"></button>
             <button onclick="onChangeFontSize('increase')" class="increase-font"> A+ </button>
@@ -48,12 +66,12 @@
                 <option value="rubik"> Rubik </option>
                 <option value="monospace"> Monospace </option>
             </select>
-            <label class="stroke-color-input-label flex" for="color-input"> Stroke color
+            <label class="stroke-color-input-label flex" for="stroke-color-input"> Stroke color
                 <input class="stroke-color-input" onchange="onSetStrokeColor(this.value)" type="color" name="color"
-                    id="" value="#000000">
+                    id="style1" value="#000000">
             </label>
-            <label class="color-input-label flex" for="color-input"> Font color
-                <input class="color-input" onchange="onSetFontColor(this.value)" type="color" name="color" id=""
+            <label class="color-input-label flex" for="color-input-label"> Font color
+                <input class="color-input" onchange="onSetFontColor(this.value)" type="color" name="color" id="style1"
                     value="#FFFFFF">
             </label>
 
@@ -75,7 +93,7 @@
 
 
 
-    <section class="gallery-container">
+    <section class="gallery-container ">
         <section class="gallery">
         </section>
     </section>

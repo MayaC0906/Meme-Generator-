@@ -1,17 +1,14 @@
 .main-header {
-    width: 100%;
     height: 75px;
     background-color: var(--clrPrimary-1);
-    position: sticky;
     opacity: .8;
-    top: 0;
-    left: 0;
-}
-
-.main-header >* {
-    margin: 0 50px;
+    width: 100%;
+    margin-block-end: 20px;
+    position: relative;
+    z-index: 10;
 
 }
+
 
 .main-header .logo {
     font-family: tilt-prism, monospace;
@@ -19,10 +16,27 @@
     color: var(--clrPrimary2);
     font-size: 2em;
     letter-spacing: 0.2em;
+    margin-inline-start: 10px;
+}
+
+.main-header .main-nav-container {
+    margin-inline-end: 20px;
 }
 
 .main-header .main-nav {
     gap: 20px;
+}
+
+.main-header .bars {
+    height: 40px;
+    width: 40px;
+    font-size: 1.8rem;
+    text-align: center;
+    border-radius: 5px;
+    color: var(--clrPrimary-1);
+    border: none;
+    background-color: rgb(82, 90, 133);
+    cursor: pointer;
 }
 
 .main-header .main-nav button {
@@ -33,6 +47,7 @@
     background: none;
     border: none;
     cursor: pointer;
+
 }
 
 .main-header .main-nav button:hover {
@@ -40,4 +55,3 @@
     scale: 1.1;
     transition: .2s;
 }
-

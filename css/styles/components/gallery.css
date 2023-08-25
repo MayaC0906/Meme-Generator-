@@ -1,8 +1,13 @@
-.gallery>* {
+.gallery img {
+    filter: grayscale(50%);
     border-radius: 10px;
+    transition: .3s;
 }
 
-.gallery>*:hover {
+.gallery img:hover {
     scale: 1.1;
     cursor: pointer;
+    filter: none;
+    position: relative;
+    z-index: 1;
 }

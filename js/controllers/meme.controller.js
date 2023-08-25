@@ -30,18 +30,22 @@ function addTouchEvents() {
 }
 
 function onDown(ev) {
-    checkIfIsDrug(ev.offsetX, ev.offsetY)
+    let pos = getEvPos(ev)
+    console.log(pos);
+    checkIfIsDrug(pos.x, pos.y)
     renderMeme()
 }
 
 function onMove(ev) {
+    ev.preventDefault()
+    let pos = getEvPos(ev)
     let meme = getMeme()
     let lineIsDrag = meme.lines.find(line => line.isDrag === true)
     if (lineIsDrag === undefined) return
     else {
         let lineWidth = gCtx.measureText(lineIsDrag.txt).width
-        lineIsDrag.x = ev.offsetX - lineWidth / 2
-        lineIsDrag.y = ev.offsetY
+        lineIsDrag.x = pos.x - lineWidth / 2
+        lineIsDrag.y = pos.y
         SaveGmemeToStorage()
         renderMeme()
     }
@@ -147,10 +151,10 @@ function onAddLine() {
     renderMeme()
 }
 
-function onAddEmoji(emoji){
-addLine()
-setEmoji(emoji)
-renderMeme()
+function onAddEmoji(emoji) {
+    addLine()
+    setEmoji(emoji)
+    renderMeme()
 }
 
 function onSaveMemeText() {
@@ -180,6 +184,17 @@ function onEditImg(meme) {
     renderMeme()
 }
 
+function onOpenModal() {
+    var elModal = document.querySelector('.modal-container')
+    elModal.style.display = 'flex'
+}
+
+function onCloseModal() {
+    var elModal = document.querySelector('.modal-container')
+    elModal.style.display = 'none'
+}
+
+
 function renderMemeTxt(textProp) {
 
     gCtx.lineWidth = 2
@@ -188,7 +203,6 @@ function renderMemeTxt(textProp) {
     gCtx.fillStyle = `${textProp.color}`
     gCtx.font = `${textProp.size}px ${textProp.font}`
     gCtx.textBaseline = 'middle'
-    gCtx.textAlign = `${textProp.align}`
     gCtx.fillText(`${textProp.txt}`, textProp.x, textProp.y)
     gCtx.strokeText(`${textProp.txt}`, textProp.x, textProp.y)
     let textLength = gCtx.measureText(textProp.txt)
@@ -200,5 +214,4 @@ function renderMemeTxt(textProp) {
     }
 
 }
-
 
