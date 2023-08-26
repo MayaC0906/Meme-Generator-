@@ -3,6 +3,7 @@
     grid-template-columns: 1fr 70px 1fr;
     justify-self: center;
     align-items: center;
+    margin-block-end: 75px;
 }
 
 
@@ -25,7 +26,7 @@
 
 .meme .change-canvas {
     grid-column: 3;
-align-self: inline-end;
+    align-self: center;
     height: var(--lMeme);
     width: var(--lMeme);
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr;

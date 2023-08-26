@@ -174,14 +174,40 @@ function onRenderSavedMemes() {
 
 }
 
-function onEditImg(meme) {
-    console.log(meme);
+function onEditImg(id) {
+    console.log('memeid' , id);
+    let meme = getSavedImg(id)
+    console.log( 'new meme', meme);
+    gMeme = meme
+    console.log('gMeme' ,gMeme);
+
+    SaveGmemeToStorage ()
+
     showMeme()
     hideSavedMemes()
-
-    // gMeme = meme
-    // SaveGmemeToStorage()
+    
     renderMeme()
+
+}
+
+function renderMemeTxt(textProp) {
+    
+    gCtx.lineWidth = 2
+    gCtx.strokeStyle = `${textProp.strokeColor}`
+    
+    gCtx.fillStyle = `${textProp.color}`
+    gCtx.font = `${textProp.size}px ${textProp.font}`
+    gCtx.textBaseline = 'middle'
+    gCtx.fillText(`${textProp.txt}`, textProp.x, textProp.y)
+    gCtx.strokeText(`${textProp.txt}`, textProp.x, textProp.y)
+    let textLength = gCtx.measureText(textProp.txt)
+    
+    if (textProp.isEdited === true) {
+        gCtx.strokeStyle = 'red'
+        gCtx.strokeRect(textProp.x - 10, textProp.y - (textProp.size / 2) - 10,
+        textLength.width + 20, textProp.size + 20)
+    }
+    
 }
 
 function onOpenModal() {
@@ -194,24 +220,4 @@ function onCloseModal() {
     elModal.style.display = 'none'
 }
 
-
-function renderMemeTxt(textProp) {
-
-    gCtx.lineWidth = 2
-    gCtx.strokeStyle = `${textProp.strokeColor}`
-
-    gCtx.fillStyle = `${textProp.color}`
-    gCtx.font = `${textProp.size}px ${textProp.font}`
-    gCtx.textBaseline = 'middle'
-    gCtx.fillText(`${textProp.txt}`, textProp.x, textProp.y)
-    gCtx.strokeText(`${textProp.txt}`, textProp.x, textProp.y)
-    let textLength = gCtx.measureText(textProp.txt)
-
-    if (textProp.isEdited === true) {
-        gCtx.strokeStyle = 'red'
-        gCtx.strokeRect(textProp.x - 10, textProp.y - (textProp.size / 2) - 10,
-            textLength.width + 20, textProp.size + 20)
-    }
-
-}
 

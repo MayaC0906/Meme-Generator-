@@ -64,3 +64,16 @@
 
 
 }
+
+
+@media screen and (max-width: 550px) {
+
+    .meme .change-canvas{
+        justify-self: center;
+        align-self: center;
+    }
+
+    .main-header .logo {
+        font-size: 1.2rem;
+    }
+}

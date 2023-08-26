@@ -1,10 +1,13 @@
 footer {
-    width: 100%;
+    width: 100vw;
     height: 30px;
     background-color: var(--clrPrimary-1);
     font-size: smaller;
     text-align: center;
     justify-content: center;
     align-items: center;    
+    position: fixed;
+    bottom: 0;
+    left: 0;
 }
 

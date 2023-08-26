@@ -1,6 +1,7 @@
 'use strict'
 
 var gSavedImgs = []
+var gSavedMemes = []
 
 var gImgs = [
   { id: 1, url: './images/1.jpg', keywords: ['funny', 'politics'] },
@@ -183,8 +184,17 @@ function cancelIsEdited() {
 
 function saveToMemes(imgSrc) {
   let meme = gMeme
-  let memeStr = JSON.stringify(meme)
-  let ImgStr = `<img onclick="onEditImg('hi')" src="${imgSrc}" alt=""></img>`
+  console.log(meme);
+  let id = makeId()
+  meme['id'] = id
+
+  let savedMemes = loadFromStorage('savedMemesDB')
+  if (!savedMemes) gSavedMemes = []
+  else gSavedMemes = savedMemes
+  gSavedMemes.push (meme)
+  saveToStorage('savedMemesDB', gSavedMemes)
+
+  let ImgStr = `<img onclick="onEditImg('${meme.id}')" src="${imgSrc}" alt=""></img>`
 
   let savedImgs = loadFromStorage('savedImagesDB')
   if (!savedImgs) gSavedImgs = []
@@ -228,3 +238,8 @@ function _createLine(y) {
   }
 }
 
+function getSavedImg (id) {
+  let savedMemes = loadFromStorage('savedMemesDB')
+  if (!savedMemes) return
+  return savedMemes.find((img)=> (img.id === id))
+}
