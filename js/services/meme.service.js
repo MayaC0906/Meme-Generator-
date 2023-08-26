@@ -29,7 +29,7 @@ var gMeme = {
   selectedLineIdx: 0,
   lines: [
     _createLine(40),
-    _createLine(390)
+    _createLine(350)
   ]
 }
 
@@ -41,7 +41,6 @@ function getMeme() {
 }
 
 function setLineTxt(txt) {
-  // let currTxt = getMemeTextProp()
   gMeme.lines[gMeme.selectedLineIdx].txt = txt
   SaveGmemeToStorage()
 }
@@ -64,7 +63,7 @@ function setStrokeColor(strokeColor) {
 }
 
 function addLine() {
-  let newLine = _createLine(220)
+  let newLine = _createLine(180)
   gMeme.lines.push(newLine)
   cancelIsEdited()
   gMeme.selectedLineIdx = gMeme.lines.length - 1
@@ -121,7 +120,7 @@ function deleteSelectedLine() {
 function setEmoji(emoji) {
   let line = gMeme.lines[gMeme.lines.length - 1]
   line.txt = emoji
-  line.x = 200
+  line.x = 150
   SaveGmemeToStorage()
 }
 
@@ -164,7 +163,7 @@ function getEvPos(ev) {
 function resetScreen() {
   gMeme.lines = [
     _createLine(40),
-    _createLine(380)
+    _createLine(350)
   ]
   SaveGmemeToStorage()
   resetInputs()
@@ -175,6 +174,15 @@ function checkIfIsEdited() {
     if (idx === gMeme.selectedLineIdx) line.isEdited = true
     else line.isEdited = false
   })
+  SaveGmemeToStorage()
+}
+
+function createRandMeme() {
+  let ranPicIdx = getRandomInt (0,gImgs.length)
+  let ranPicId = gImgs[ranPicIdx].id
+  gMeme.selectedImgId = ranPicId
+  gMeme.lines[0].txt = 'When you\'re coding'
+  gMeme.lines[1].txt = 'And get to CSS'
   SaveGmemeToStorage()
 }
 

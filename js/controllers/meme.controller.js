@@ -231,3 +231,10 @@ function resetInputs () {
     document.querySelector('.stroke-color-input').value = '#000000'
 }
 
+function onRenderRanMeme() {
+    console.log('hi');
+    createRandMeme()
+    hideGallery()
+    showMeme()
+    renderMeme()
+}
