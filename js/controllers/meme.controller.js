@@ -31,7 +31,6 @@ function addTouchEvents() {
 
 function onDown(ev) {
     let pos = getEvPos(ev)
-    console.log(pos);
     checkIfIsDrug(pos.x, pos.y)
     renderMeme()
 }

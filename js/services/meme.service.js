@@ -100,8 +100,9 @@ function changeAlign(direction) {
 }
 
 function setFontSize(fontChange) {
-  if (fontChange === 'increase') gMeme.lines[gMeme.selectedLineIdx].size += 1
-  else gMeme.lines[gMeme.selectedLineIdx].size -= 1
+  let line = getSelectedLine()
+  if (fontChange === 'increase') line.size += 1
+  else line.size -= 1
   SaveGmemeToStorage()
 }
 
@@ -134,7 +135,9 @@ function getMemeLine() {
 }
 
 function getSelectedLine() {
-  return gMeme.lines.find(line => line.isEdited === true)
+  let line =  gMeme.lines[gMeme.selectedLineIdx]
+  line.isEdited = true
+  return line
 }
 
 function getImgUrlById(id) {
@@ -208,7 +211,6 @@ function saveToMemes(imgSrc) {
 function checkIfIsDrug(x, y) {
   gMeme.lines.forEach((line, idx) => {
     let lineWidth = gCtx.measureText(line.txt).width
-    console.log('linewidth', lineWidth);
     if (x > line.x && x < lineWidth + line.x && y > (line.y - 0.5 * line.size) && y < (line.y + 0.5 * line.size)) {
       line.isDrag = true
       line.isEdited = true
