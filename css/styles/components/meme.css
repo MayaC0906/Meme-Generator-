@@ -57,7 +57,7 @@
     border-radius: 10px;
 }
 
-.meme .change-canvas>*:hover:not(.emoji-pick):not(.fc-btn) {
+.meme .change-canvas>*:hover:not(.emoji-pick):not(.fc-btn):not(.txt-input) {
     background-color: rgb(119, 232, 255);
     cursor: pointer;
 }
@@ -69,6 +69,9 @@
 .txt-input {
     grid-area: txt-input;
 }
+
+.txt-input:hover {
+cursor:text;}
 
 .save-text-button {
     grid-area: save-text-button;

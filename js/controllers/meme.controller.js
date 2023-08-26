@@ -42,6 +42,7 @@ function onMove(ev) {
     let lineIsDrag = meme.lines.find(line => line.isDrag === true)
     if (lineIsDrag === undefined) return
     else {
+        document.body.style.cursor = 'grabbing'
         let lineWidth = gCtx.measureText(lineIsDrag.txt).width
         lineIsDrag.x = pos.x - lineWidth / 2
         lineIsDrag.y = pos.y
@@ -51,6 +52,7 @@ function onMove(ev) {
 }
 
 function onUp() {
+    document.body.style.cursor = 'auto'
     let meme = getMeme()
     meme.lines.forEach(line => line.isDrag = false)
     SaveGmemeToStorage()

@@ -50,19 +50,19 @@
 
         <section class="change-canvas grid">
             <input onclick="checkIfIsEdited(),renderMeme()" class="txt-input" oninput="onSetLineText(this.value)"
-                class="meme-txt" type="text" value="enter your text">
-            <button onclick="onSaveMemeText()" class="save-text-button">Save text</button>
+                class="meme-txt" type="text" value="enter your text" title="Enter here your text">
+            <button onclick="onSaveMemeText()" class="save-text-button" title="Save your text">Save text</button>
             <button class="move-line-up" title="Move line up" onclick="onMoveText('up')">↑</button>
             <button class="move-line-down" title="Move line down" onclick="onMoveText('down')">↓</button>
             <button class="switch-line" title="Switch lines" onclick="onSwitchLines()">↑↓</button>
             <button class="add-line" title="Add line" onclick="onAddLine()">+</button>
-            <button onclick="onDeleteLine()" class="delete-meme fa trash"></button>
-            <button onclick="onChangeFontSize('increase')" class="increase-font"> A+ </button>
-            <button onclick="onChangeFontSize('decrease')" class="decrease-font"> A- </button>
-            <button onclick="onChangeAlign('left')" class="fa align-left"></button>
-            <button onclick="onChangeAlign('center')" class="fa align-middle"></button>
-            <button onclick="onChangeAlign('right')" class="fa align-right"></button>
-            <select onchange="onSetFont(this.value)" name="font-select" class="set-font">
+            <button onclick="onDeleteLine()" class="delete-meme fa trash" title="Delete selected line"></button>
+            <button onclick="onChangeFontSize('increase')" class="increase-font" title="Increase font size"> A+ </button>
+            <button onclick="onChangeFontSize('decrease')" class="decrease-font" title="Decrease font size"> A- </button>
+            <button onclick="onChangeAlign('left')" class="fa align-left" title="Align left"></button>
+            <button onclick="onChangeAlign('center')" class="fa align-middle" title="Align middle"></button>
+            <button onclick="onChangeAlign('right')" class="fa align-right" title="Align right"></button>
+            <select onchange="onSetFont(this.value)" name="font-select" class="set-font" title="Change font">
                 <option value="impact"> Impact </option>
                 <option value="rubik"> Rubik </option>
                 <option value="monospace"> Monospace </option>
@@ -76,7 +76,7 @@
                     value="#FFFFFF">
             </label>
 
-            <section class="emoji-pick flex">
+            <section class="emoji-pick flex" title="Choose emoji by clicking">
                 <button onclick="onAddEmoji('❤️')">❤️</button>
                 <button onclick="onAddEmoji('😊')">😊</button>
                 <button onclick="onAddEmoji('👑')">👑</button>
