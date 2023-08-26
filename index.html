@@ -49,8 +49,8 @@
         </section>
 
         <section class="change-canvas grid">
-            <input onclick="checkIfIsEdited(),renderMeme()" class="txt-input" oninput="onSetLineText(this.value)"
-                class="meme-txt" type="text" value="enter your text" title="Enter here your text">
+            <input onclick="checkIfIsEdited(),renderMeme(),cleanTxtInput(this)" class="txt-input" oninput="onSetLineText(this.value)"
+                class="meme-txt" type="text" value="Enter text here" title="Enter here your text">
             <button onclick="onSaveMemeText()" class="save-text-button" title="Save your text">Save text</button>
             <button class="move-line-up" title="Move line up" onclick="onMoveText('up')">↑</button>
             <button class="move-line-down" title="Move line down" onclick="onMoveText('down')">↓</button>

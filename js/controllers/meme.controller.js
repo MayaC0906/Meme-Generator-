@@ -58,6 +58,10 @@ function onUp() {
     SaveGmemeToStorage()
 }
 
+function cleanTxtInput(txtInput) {
+    if (txtInput.value === 'Enter text here') txtInput.value =''
+}
+
 function onOpenGallery() {
     showGallery()
     hideMeme()

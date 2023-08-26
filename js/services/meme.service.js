@@ -167,7 +167,7 @@ function resetScreen() {
     _createLine(380)
   ]
   SaveGmemeToStorage()
-  document.querySelector('.txt-input').value = 'enter text here'
+  document.querySelector('.txt-input').value = 'Enter text here'
   document.querySelector('.color-input').value = '#FFFFFF'
   document.querySelector('.stroke-color-input').value = '#000000'
 }
@@ -232,7 +232,7 @@ function _createLine(y) {
     isDrag: false,
     x: 40,
     y,
-    txt: 'enter text here',
+    txt: 'Enter text here',
     font: 'impact',
     size: 40,
     color: '#FFFFFF',
