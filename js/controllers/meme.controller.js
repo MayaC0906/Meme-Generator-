@@ -225,4 +225,9 @@ function onCloseModal() {
     elModal.style.display = 'none'
 }
 
+function resetInputs () {
+    document.querySelector('.txt-input').value = 'Enter text here'
+    document.querySelector('.color-input').value = '#FFFFFF'
+    document.querySelector('.stroke-color-input').value = '#000000'
+}
 

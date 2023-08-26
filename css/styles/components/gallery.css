@@ -1,3 +1,6 @@
+.gallery-container{
+    margin: 0 20px;
+}
 .gallery img {
     filter: grayscale(50%);
     border-radius: 10px;

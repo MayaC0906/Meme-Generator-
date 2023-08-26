@@ -167,9 +167,7 @@ function resetScreen() {
     _createLine(380)
   ]
   SaveGmemeToStorage()
-  document.querySelector('.txt-input').value = 'Enter text here'
-  document.querySelector('.color-input').value = '#FFFFFF'
-  document.querySelector('.stroke-color-input').value = '#000000'
+  resetInputs()
 }
 
 function checkIfIsEdited() {
