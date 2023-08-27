@@ -1,0 +1,164 @@
+.meme .canvas-container {
+    justify-content: center;
+}
+
+.meme .change-canvas {
+    align-self: center;
+    width: var(--s);
+    height: var(--s);
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-auto-columns: 1fr;
+    gap: 10px 10px;
+    grid-auto-flow: row;
+    grid-template-areas:
+        "txt-input txt-input txt-input save-text-button save-text-button"
+        "move-line-up move-line-down switch-line add-line delete-meme"
+        "increase-font decrease-font align-left align-middle align-right"
+        "set-font stroke-color-input-label stroke-color-input-label color-input-label color-input-label"
+        "emoji-pick emoji-pick emoji-pick emoji-pick emoji-pick"
+        "download-btn download-btn save-to-gallery save-to-gallery save-to-gallery"
+        "fc-btn fc-btn fc-btn fc-btn fc-btn";
+    margin: 10px 20px;
+    justify-self: center;
+
+}
+
+.meme .change-canvas button,
+input,
+select {
+    font-size: 1.1rem;
+}
+
+.meme .lightBlue {
+    background-color:  var(--clrPrimary-2);
+    color: var(--clrPrimary1);
+    border: 1px solid var(--clrPrimary1) ;
+    border-radius: 10px;
+}
+
+.meme .lightBlue:hover:not(.fc-btn, .emoji-pick) {
+    cursor: pointer;
+    background-color: var(--clrPrimary-1);
+    
+}
+
+.txt-input {
+    border-radius: 10px;
+    grid-area: txt-input;
+    outline: 3px solid var(--clrSecondery);
+}
+
+.txt-input:hover {
+    cursor: text;
+}
+
+.save-text-button {
+    grid-area: save-text-button;
+    background-color: var(--clrPrimary-2);
+}
+
+.move-line-up {
+    grid-area: move-line-up;
+}
+
+.move-line-down {
+    grid-area: move-line-down;
+}
+
+.switch-line {
+    grid-area: switch-line;
+}
+
+.add-line {
+    grid-area: add-line;
+}
+
+.delete-meme {
+    grid-area: delete-meme;
+}
+
+.increase-font {
+    grid-area: increase-font;
+}
+
+.decrease-font {
+    grid-area: decrease-font;
+}
+
+.align-middle {
+    grid-area: align-middle;
+}
+
+.align-left {
+    grid-area: align-left;
+}
+
+.align-right {
+    grid-area: align-right;
+}
+
+.set-font {
+    grid-area: set-font;
+}
+
+.stroke-color-input-label {
+    grid-area: stroke-color-input-label;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.color-input-label {
+    grid-area: color-input-label;
+    flex-direction: column;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.emoji-pick {
+    grid-area: emoji-pick;
+    align-items: center;
+}
+
+.emoji-pick>* {
+    margin: 0 5px;
+    width: 100%;
+    height: 80%;
+    font-size: 2rem;
+    background: none;
+    border: none;
+
+}
+
+.emoji-pick>*:hover {
+    background-color: var(--clrPrimary-1);
+    cursor: pointer;
+    scale: 1.3;
+}
+
+
+.download-btn {
+    text-decoration: none;
+    color: inherit;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    grid-area: download-btn;
+}
+
+.fc-btn {
+    grid-area: fc-btn;
+}
+
+.fc-btn:hover {
+    background-color: #4267B2;
+    cursor: pointer;
+    color: white;
+}
+
+.save-to-gallery {
+    grid-area: save-to-gallery;
+}

@@ -1,0 +1,34 @@
+.gallery {
+    margin: 0 10px;
+}
+
+.gallery-container button {
+    margin-block-end: 20px;
+    margin-inline-start: 10px;
+    background-color: var(--clrPrimary-2);
+    color: var(--clrPrimary1);
+    text-align: center;
+    height: 30px;
+    width: 200px;
+    font-size: 1.5rem;
+    border-radius: 10px;
+    border: 1px solid var(--clrPrimary1);
+}
+
+.gallery img {
+    filter: grayscale(50%);
+    margin-block-end: 10px;
+}
+
+.saved-memes {
+    margin: 0 10px;
+} 
+
+
+img:hover {
+    cursor: pointer;
+    outline: 1px solid var(--clrPrimary-2);
+    filter: none;
+    position: relative;
+    z-index: 10;
+}

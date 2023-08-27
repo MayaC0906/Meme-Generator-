@@ -1,0 +1,19 @@
+/* SETUP */
+@import url("./setup/vars.css");
+@import url("./setup/typography.css");
+
+/* BASICS */
+@import url("./basics/base.css");
+@import url("./basics/layout.css");
+@import url("./basics/helpers.css");
+
+/* COMPONENTS */
+@import url("./components/galleries.css");
+@import url("./components/meme.css");
+@import url("./components/main-header.css");
+@import url("./components/main-footer.css");
+@import url("./components/modal.css");
+
+
+/* MEDIA WUERIES */
+@import url("./setup/mq.css");

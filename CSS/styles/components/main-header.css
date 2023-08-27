@@ -1,0 +1,64 @@
+.main-header {
+height: var(--s-Header);
+background-color: var(--clrPrimaryBase);
+margin-block-end: 15px;
+position: sticky;
+top: 0;
+width: 100%;
+z-index: 20;
+}
+
+.main-header .logo {
+    font-family: tilt-prism;
+    margin-inline-start: 10px;
+    font-size: 2rem;
+    color: var(--clrPrimary-2);
+}
+
+.main-header .bars {
+    margin-inline-end: 10px;
+    height: 30px;
+    width: 30px;
+    color: var(--clrPrimaryBase);
+    border: 1px solid var(--clrPrimaryBase);
+    background-color: var(--clrPrimary-2) ;
+}
+
+.main-header .bars:hover {
+    cursor: pointer;
+}
+
+.main-header .main-nav {
+    flex-direction: column;
+}
+
+.main-header .main-nav button {
+background-color: var(--clrPrimary-1);
+outline: 1px solid var(--clrPrimaryBase);
+height: 2.5rem;
+font-size: 1.2rem;
+font-family: roboto-mono;
+color: var(--clrPrimary-2);
+}
+
+.main-header .main-nav button:hover {
+    scale: 1.2;
+    cursor: pointer;
+}
+
+.main-nav-container {
+    position: fixed;
+    top: 60px;
+    right: 0;
+    width: 100%;
+    transform: translateX(100%);
+    transition: transform 0.6s;
+}
+
+body.menu-open .main-nav-container {
+    transform: translateX(0);
+}
+
+body.menu-open .main-nav {
+    box-shadow: 0px 0px 17px rgb(0 0 0 / 50%);
+}

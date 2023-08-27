@@ -1,0 +1,24 @@
+:root {
+
+    /* FONT */
+    font-family: rubik, sans-serif;
+
+    /* pallete */
+    --clrPrimary1: #33156b;
+    --clrPrimaryBase: #7578da;
+    --clrPrimary-1: #b3b0ff;
+    --clrPrimary-2: #ecebff;
+    /* --clrPrimary-2: #f0f0f0; */
+
+    --clrSecondery: rgb(146, 3, 3); 
+    --clrSecondery-1: rgba(115, 114, 114, 0.6);
+
+    /* SIZES */
+    --s :350px;
+    --m: 380px;
+    --l: 500px;
+    --xl: 600px;
+    --s-Header: 60px;
+    --m-Header: 75px;
+
+}

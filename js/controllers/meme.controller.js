@@ -36,12 +36,12 @@ function onDown(ev) {
 }
 
 function onMove(ev) {
-    ev.preventDefault()
     let pos = getEvPos(ev)
     let meme = getMeme()
     let lineIsDrag = meme.lines.find(line => line.isDrag === true)
     if (lineIsDrag === undefined) return
     else {
+        ev.preventDefault()
         document.body.style.cursor = 'grabbing'
         let lineWidth = gCtx.measureText(lineIsDrag.txt).width
         lineIsDrag.x = pos.x - lineWidth / 2
