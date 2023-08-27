@@ -3,11 +3,6 @@
         margin: 10px 0 0 0 ;
     }
 
-    html {
-        width: 100%;
-    }
-
-
     .meme .canvas-change-container {
         width: var(--s);
         background: none;
@@ -124,6 +119,17 @@
     
     .about-modal h2 {
         font-size: 1.5rem;
+    }
+
+}
+
+@media screen and (min-width: 1300px) {
+    .meme .canvas-container {
+        margin-inline-start: 130px;
+    }
+
+    .meme .canvas-change-container{
+        margin-inline-end: 130px;
     }
 
 }
