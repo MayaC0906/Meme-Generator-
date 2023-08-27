@@ -1,11 +1,16 @@
 @media screen and (max-width: 420px) {
     .meme .change-canvas {
-        margin: 10px 0 0 0 ;
+        margin: 10px 0 0 0;
     }
 
     .meme .canvas-change-container {
         width: var(--s);
         background: none;
+    }
+
+    .main-layout {
+        width: 99%;
+        margin: 0;
     }
 
 }
@@ -34,10 +39,10 @@
     .meme .change-canvas {
         width: var(--l);
     }
-    
+
     .about-modal {
         font-size: 1rem;
-        width: var(--l) ;
+        width: var(--l);
     }
 
 
@@ -57,8 +62,8 @@
         transform: translateX(0);
         background: none;
     }
-    
-    
+
+
     .main-header .main-nav {
         flex-direction: row;
         justify-content: space-evenly;
@@ -84,7 +89,7 @@
 
 @media screen and (min-width: 1100px) {
 
-    .meme .canvas-change-container{
+    .meme .canvas-change-container {
         margin-block-start: 0;
     }
 
@@ -114,9 +119,9 @@
 
     .about-modal {
         font-size: 1.1rem;
-        width: var(--xl) ;
+        width: var(--xl);
     }
-    
+
     .about-modal h2 {
         font-size: 1.5rem;
     }
@@ -128,7 +133,7 @@
         margin-inline-start: 130px;
     }
 
-    .meme .canvas-change-container{
+    .meme .canvas-change-container {
         margin-inline-end: 130px;
     }
 
