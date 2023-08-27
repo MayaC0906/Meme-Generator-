@@ -158,6 +158,7 @@ function getEvPos(ev) {
 }
 
 function resetScreen() {
+  gMeme.selectedLineIdx = 0
   gMeme.lines = [
     _createLine(-120),
     _createLine(120)
