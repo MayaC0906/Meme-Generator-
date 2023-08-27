@@ -8,10 +8,10 @@
 @import url("./basics/helpers.css");
 
 /* COMPONENTS */
-@import url("./components/galleries.css");
-@import url("./components/meme.css");
 @import url("./components/main-header.css");
 @import url("./components/main-footer.css");
+@import url("./components/galleries.css");
+@import url("./components/meme.css");
 @import url("./components/modal.css");
 
 
