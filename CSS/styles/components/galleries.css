@@ -15,6 +15,10 @@
     border: 1px solid var(--clrPrimary1);
 }
 
+.gallery-container button:hover {
+    cursor: pointer;
+}
+
 .gallery img {
     filter: grayscale(50%);
     margin-block-end: 10px;

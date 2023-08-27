@@ -1,4 +1,9 @@
 
+.main-layout {
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100vh;
+}
 
 .gallery {
   columns: 1 150px;

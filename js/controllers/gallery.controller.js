@@ -20,11 +20,3 @@ function onImgSelect(imgId) {
 function onToggleMenu() {
     document.body.classList.toggle('menu-open');
 }
-
-// function onOpenBars() {
-//     console.log('hi');
-//     let elMainNav = document.querySelector ('.main-nav')
-//     if (gIsBarsOpen === false) elMainNav.style.top = '75px'
-//     else elMainNav.style.top = '-1000px'
-//     gIsBarsOpen = !gIsBarsOpen
-// }

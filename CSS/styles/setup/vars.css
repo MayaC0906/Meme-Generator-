@@ -1,5 +1,4 @@
 :root {
-
     /* FONT */
     font-family: rubik, sans-serif;
 
@@ -18,7 +17,7 @@
     --m: 380px;
     --l: 500px;
     --xl: 600px;
-    --s-Header: 60px;
+    /* --s-Header: 60px; */
     --m-Header: 75px;
 
 }

@@ -1,5 +1,19 @@
+.meme .canvas-change-container {
+    background-color: var(--clrPrimary1);
+    justify-content: center;
+    width:  calc(var(--s) +20px);
+    align-self: center;
+    border-radius: 10px;
+    justify-self: center;
+    margin-block-start: 10px;
+}
+
 .meme .canvas-container {
     justify-content: center;
+}
+
+canvas {
+    border-radius: 10px;
 }
 
 .meme .change-canvas {
@@ -161,4 +175,26 @@ select {
 
 .save-to-gallery {
     grid-area: save-to-gallery;
+}
+
+
+.style1 {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    width: 30px;
+    height: 30px;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+.style1::-webkit-color-swatch {
+    border-radius: 10px;
+    border: 1px solid black;
+}
+
+.style1::-moz-color-swatch {
+    border-radius: 15px;
+    border: 1px solid black;
 }

@@ -27,10 +27,7 @@ var gImgs = [
 var gMeme = {
   selectedImgId: null,
   selectedLineIdx: 0,
-  lines: [
-    _createLine(40),
-    _createLine(350)
-  ]
+  lines: []
 }
 
 function getMeme() {
@@ -63,7 +60,7 @@ function setStrokeColor(strokeColor) {
 }
 
 function addLine() {
-  let newLine = _createLine(180)
+  let newLine = _createLine(0)
   gMeme.lines.push(newLine)
   cancelIsEdited()
   gMeme.selectedLineIdx = gMeme.lines.length - 1
@@ -120,7 +117,7 @@ function deleteSelectedLine() {
 function setEmoji(emoji) {
   let line = gMeme.lines[gMeme.lines.length - 1]
   line.txt = emoji
-  line.x = 150
+  line.x = 140
   SaveGmemeToStorage()
 }
 
@@ -162,8 +159,8 @@ function getEvPos(ev) {
 
 function resetScreen() {
   gMeme.lines = [
-    _createLine(40),
-    _createLine(350)
+    _createLine(-120),
+    _createLine(120)
   ]
   SaveGmemeToStorage()
   resetInputs()
@@ -181,6 +178,8 @@ function createRandMeme() {
   let ranPicIdx = getRandomInt (0,gImgs.length)
   let ranPicId = gImgs[ranPicIdx].id
   gMeme.selectedImgId = ranPicId
+  gMeme.lines[0].x = 25
+  gMeme.lines[1].x = 60
   gMeme.lines[0].txt = 'When you\'re coding'
   gMeme.lines[1].txt = 'And get to CSS'
   SaveGmemeToStorage()
@@ -193,7 +192,6 @@ function cancelIsEdited() {
 
 function saveToMemes(imgSrc) {
   let meme = gMeme
-  console.log(meme);
   let id = makeId()
   meme['id'] = id
 
@@ -233,11 +231,12 @@ function checkIfIsDrug(x, y) {
 }
 
 function _createLine(y) {
+  const center = { x: 60 , y: gElCanvas.height / 2 }
   return {
     isEdited: false,
     isDrag: false,
-    x: 40,
-    y,
+    x: center.x,
+    y: center.y+y,
     txt: 'Enter text here',
     font: 'impact',
     size: 40,

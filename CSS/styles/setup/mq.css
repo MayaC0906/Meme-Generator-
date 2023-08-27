@@ -1,7 +1,13 @@
 @media screen and (max-width: 390px) {
     .meme .change-canvas {
-        margin: 10px 0;
+        margin: 10px 0 0 ;
     }
+
+    .meme .canvas-change-container {
+        width: var(--s);
+        background: none;
+    }
+
 }
 
 @media screen and (min-width: 500px) {
@@ -28,7 +34,7 @@
     .meme .change-canvas {
         width: var(--l);
     }
-
+    
     .about-modal {
         font-size: 1rem;
         width: var(--l) ;
@@ -40,7 +46,7 @@
     }
 
     .main-header {
-        justify-items: space-between;
+        height: 60px;
     }
 
     .main-header .main-nav-container {
@@ -71,10 +77,16 @@
         margin-inline-end: 20px;
     }
 
+
+
 }
 
 
-@media screen and (min-width: 1000px) {
+@media screen and (min-width: 1100px) {
+
+    .meme .canvas-change-container{
+        margin-block-start: 0;
+    }
 
     .main-header .logo {
         margin-inline-start: 50px;

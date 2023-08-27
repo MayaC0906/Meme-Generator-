@@ -59,7 +59,7 @@ function onUp() {
 }
 
 function cleanTxtInput(txtInput) {
-    if (txtInput.value === 'Enter text here') txtInput.value =''
+    if (txtInput.value === 'Enter text here') txtInput.value = ''
 }
 
 function onOpenGallery() {
@@ -180,39 +180,41 @@ function onRenderSavedMemes() {
 }
 
 function onEditImg(id) {
-    console.log('memeid' , id);
+    console.log('memeid', id);
     let meme = getSavedImg(id)
-    console.log( 'new meme', meme);
+    console.log('new meme', meme);
     gMeme = meme
-    console.log('gMeme' ,gMeme);
+    console.log('gMeme', gMeme);
 
-    SaveGmemeToStorage ()
+    document.querySelector('.txt-input').value = gMeme.lines[gMeme.selectedLineIdx].txt
+
+    SaveGmemeToStorage()
 
     showMeme()
     hideSavedMemes()
-    
+
     renderMeme()
 
 }
 
 function renderMemeTxt(textProp) {
-    
+
     gCtx.lineWidth = 2
     gCtx.strokeStyle = `${textProp.strokeColor}`
-    
+
     gCtx.fillStyle = `${textProp.color}`
     gCtx.font = `${textProp.size}px ${textProp.font}`
     gCtx.textBaseline = 'middle'
     gCtx.fillText(`${textProp.txt}`, textProp.x, textProp.y)
     gCtx.strokeText(`${textProp.txt}`, textProp.x, textProp.y)
     let textLength = gCtx.measureText(textProp.txt)
-    
+
     if (textProp.isEdited === true) {
         gCtx.strokeStyle = 'red'
         gCtx.strokeRect(textProp.x - 10, textProp.y - (textProp.size / 2) - 10,
-        textLength.width + 20, textProp.size + 20)
+            textLength.width + 20, textProp.size + 20)
     }
-    
+
 }
 
 function onOpenModal() {
@@ -225,7 +227,7 @@ function onCloseModal() {
     elModal.style.display = 'none'
 }
 
-function resetInputs () {
+function resetInputs() {
     document.querySelector('.txt-input').value = 'Enter text here'
     document.querySelector('.color-input').value = '#FFFFFF'
     document.querySelector('.stroke-color-input').value = '#000000'
@@ -233,6 +235,7 @@ function resetInputs () {
 
 function onRenderRanMeme() {
     console.log('hi');
+    resetScreen()
     createRandMeme()
     hideGallery()
     showMeme()

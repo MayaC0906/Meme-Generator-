@@ -9,15 +9,15 @@
 </head>
 
 
-<body onload="onInIt()" class="main-layout">
+<body onload="onInIt()" class="main-layout flex">
 
     <header class="main-header flex space-between align-center">
         <div class="logo">Memes Generator</div>
         <nav class="main-nav-container">
             <div class="main-nav flex">
-                <button  onclick="onOpenGallery()"> Gallery</button>
-                <button  onclick="onRenderSavedMemes()"> memes</button>
-                <button  onclick="onOpenModal()"> About</button>
+                <button onclick="onOpenGallery()"> Gallery</button>
+                <button onclick="onRenderSavedMemes()"> memes</button>
+                <button onclick="onOpenModal()"> About</button>
             </div>
         </nav>
         <button onclick="onToggleMenu()" class="fa bars"></button>
@@ -48,51 +48,62 @@
             <canvas width="375" height="375"> </canvas>
         </section>
 
-        <section class="change-canvas grid">
-            <input onclick="checkIfIsEdited(),renderMeme(),cleanTxtInput(this)" class="txt-input" oninput="onSetLineText(this.value)"
-                class="meme-txt lightBlue" type="text" value="Enter text here" title="Enter here your text">
-            <button onclick="onSaveMemeText()" class="save-text-button lightBlue" title="Save your text">Save text</button>
-            <button class="move-line-up lightBlue" title="Move line up" onclick="onMoveText('up')">↑</button>
-            <button class="move-line-down lightBlue" title="Move line down" onclick="onMoveText('down')">↓</button>
-            <button class="switch-line lightBlue" title="Switch lines" onclick="onSwitchLines()">↑↓</button>
-            <button class="add-line lightBlue" title="Add line" onclick="onAddLine()">+</button>
-            <button onclick="onDeleteLine()" class="delete-meme fa trash lightBlue" title="Delete selected line"></button>
-            <button onclick="onChangeFontSize('increase')" class="increase-font lightBlue" title="Increase font size"> A+ </button>
-            <button onclick="onChangeFontSize('decrease')" class="decrease-font lightBlue" title="Decrease font size"> A- </button>
-            <button onclick="onChangeAlign('left')" class="fa align-left lightBlue" title="Align left"></button>
-            <button onclick="onChangeAlign('center')" class="fa align-middle lightBlue" title="Align middle"></button>
-            <button onclick="onChangeAlign('right')" class="fa align-right lightBlue" title="Align right"></button>
-            <select onchange="onSetFont(this.value)" name="font-select " class="set-font lightBlue" title="Change font">
-                <option value="impact"> Arial </option>
-                <option value="rubik"> Rubik </option>
-                <option value="monospace"> Monospace </option>
-            </select>
-            <label class="stroke-color-input-label flex lightBlue" for="stroke-color-input"> Stroke color
-                <input class="stroke-color-input" onchange="onSetStrokeColor(this.value)" type="color" name="color"
-                    id="style1 stroke-color-input" value="#000000">
-            </label>
-            <label class="color-input-label flex lightBlue" for="color-input-label"> Font color
-                <input class="color-input" onchange="onSetFontColor(this.value)" type="color" name="color" id="style1 color-input-label"
-                    value="#FFFFFF">
-            </label>
+        <div class="canvas-change-container flex">
+            <section class="change-canvas grid">
+                <input onclick="checkIfIsEdited(),renderMeme(),cleanTxtInput(this)" class="txt-input"
+                    oninput="onSetLineText(this.value)" class="meme-txt lightBlue" type="text" value="Enter text here"
+                    title="Enter here your text">
+                <button onclick="onSaveMemeText()" class="save-text-button lightBlue" title="Save your text">Save
+                    text</button>
+                <button class="move-line-up lightBlue" title="Move line up" onclick="onMoveText('up')">↑</button>
+                <button class="move-line-down lightBlue" title="Move line down" onclick="onMoveText('down')">↓</button>
+                <button class="switch-line lightBlue" title="Switch lines" onclick="onSwitchLines()">↑↓</button>
+                <button class="add-line lightBlue" title="Add line" onclick="onAddLine()">+</button>
+                <button onclick="onDeleteLine()" class="delete-meme fa trash lightBlue"
+                    title="Delete selected line"></button>
+                <button onclick="onChangeFontSize('increase')" class="increase-font lightBlue"
+                    title="Increase font size"> A+ </button>
+                <button onclick="onChangeFontSize('decrease')" class="decrease-font lightBlue"
+                    title="Decrease font size"> A- </button>
+                <button onclick="onChangeAlign('left')" class="fa align-left lightBlue" title="Align left"></button>
+                <button onclick="onChangeAlign('center')" class="fa align-middle lightBlue"
+                    title="Align middle"></button>
+                <button onclick="onChangeAlign('right')" class="fa align-right lightBlue" title="Align right"></button>
+                <select onchange="onSetFont(this.value)" name="font-select " class="set-font lightBlue"
+                    title="Change font">
+                    <option value="impact"> Arial </option>
+                    <option value="rubik"> Rubik </option>
+                    <option value="monospace"> Monospace </option>
+                </select>
+                <label class="stroke-color-input-label flex lightBlue" for="stroke-color-input"> Stroke color
+                    <input class="stroke-color-input style1" onchange="onSetStrokeColor(this.value)" type="color"
+                        name="color" id="stroke-color-input" value="#000000">
+                </label>
+                <label class="color-input-label flex lightBlue" for="color-input-label"> Font color
+                    <input class="color-input style1" onchange="onSetFontColor(this.value)" type="color"
+                        name="color-input-label" id="color-input-label" value="#FFFFFF">
+                </label>
 
-            <section class="emoji-pick flex lightBlue" title="Choose emoji by clicking">
-                <button onclick="onAddEmoji('❤️')">❤️</button>
-                <button onclick="onAddEmoji('😊')">😊</button>
-                <button onclick="onAddEmoji('👑')">👑</button>
-                <button onclick="onAddEmoji('✌️')">✌️</button>
-                <button onclick="onAddEmoji('👿')">👿</button>
+                <section class="emoji-pick flex lightBlue" title="Choose emoji by clicking">
+                    <button onclick="onAddEmoji('❤️')">❤️</button>
+                    <button onclick="onAddEmoji('😊')">😊</button>
+                    <button onclick="onAddEmoji('👑')">👑</button>
+                    <button onclick="onAddEmoji('✌️')">✌️</button>
+                    <button onclick="onAddEmoji('👿')">👿</button>
+                </section>
+                <a href="#" class="download-btn flex lightBlue" onclick="onDownloadImg(this)"
+                    download="my-img.jpg">Download meme</a>
+                <button class="save-to-gallery lightBlue" onclick="onSaveToMemes()"> Save meme</button>
+                <button class="fc-btn lightBlue" onclick="onShareImg()">
+                    Share your meme on Facebook
+                </button>
+
             </section>
-            <a href="#" class="download-btn flex lightBlue" onclick="onDownloadImg(this)" download="my-img.jpg">Download meme</a>
-            <button class="save-to-gallery lightBlue" onclick="onSaveToMemes()"> Save meme</button>
-            <button class="fc-btn lightBlue" onclick="onShareImg()">
-                Share your meme on Facebook
-            </button>
+        </div>
 
-        </section>
     </section>
 
-   
+
 
 
     <section class="gallery-container ">
