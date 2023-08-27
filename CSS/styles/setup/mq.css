@@ -1,3 +1,9 @@
+@media screen and (max-width: 390px) {
+    .meme .change-canvas {
+        margin: 10px 0;
+    }
+}
+
 @media screen and (min-width: 500px) {
     .gallery {
         columns: 2 180px;
